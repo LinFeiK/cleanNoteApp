@@ -3,15 +3,16 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id("org.jetbrains.kotlin.plugin.compose") version "2.1.0"
 }
 
 android {
-    compileSdk 31
+    compileSdk 36 // was 31
 
     defaultConfig {
         applicationId "com.plcoding.cleanarchitecturenoteapp"
         minSdk 21
-        targetSdk 31
+        targetSdk 36 // was 31
         versionCode 1
         versionName "1.0"
 
@@ -33,7 +34,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-        useIR = true
+        //useIR = true
     }
     buildFeatures {
         compose true
@@ -47,6 +48,7 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+    namespace 'com.plcoding.cleanarchitecturenoteapp'
 }
 
 dependencies {
